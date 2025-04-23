@@ -18,3 +18,10 @@ class Apartment(EstateAbstract):
         self.has_parking = has_parking
         self.floor = floor
         super().__init__(*args, **kwargs)
+
+
+class House(EstateAbstract):
+    def __init__(self, has_yard, floors_count, *args, **kwargs):
+        self.has_yard = has_yard
+        self.floors_count = floors_count
+        super().__init__(*args, **kwargs)

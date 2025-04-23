@@ -10,3 +10,11 @@ class EstateAbstract(BaseClass):
         self.region = region
         self.address = address
         super().__init__(*args, **kwargs)
+
+
+class Apartment(EstateAbstract):
+    def __init__(self, has_elevator, has_parking, floor, *args, **kwargs):
+        self.has_elevator = has_elevator
+        self.has_parking = has_parking
+        self.floor = floor
+        super().__init__(*args, **kwargs)

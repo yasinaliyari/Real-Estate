@@ -11,6 +11,11 @@ class EstateAbstract(BaseClass):
         self.address = address
         super().__init__(*args, **kwargs)
 
+        @abstractmethod
+        def show_description(self):
+            pass
+
+
 
 class Apartment(EstateAbstract):
     def __init__(self, has_elevator, has_parking, floor, *args, **kwargs):
@@ -19,6 +24,10 @@ class Apartment(EstateAbstract):
         self.floor = floor
         super().__init__(*args, **kwargs)
 
+        def show_description(self):
+            print(f'Apartment ID: {self.id}')
+
+
 
 class House(EstateAbstract):
     def __init__(self, has_yard, floors_count, *args, **kwargs):
@@ -26,6 +35,11 @@ class House(EstateAbstract):
         self.floors_count = floors_count
         super().__init__(*args, **kwargs)
 
+        def show_description(self):
+            print(f'House ID: {self.id}')
+
+
 
 class Store(EstateAbstract):
-    pass
+    def show_description(self):
+        print(f'Store ID: {self.id}')

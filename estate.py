@@ -25,3 +25,7 @@ class House(EstateAbstract):
         self.has_yard = has_yard
         self.floors_count = floors_count
         super().__init__(*args, **kwargs)
+
+
+class Store(EstateAbstract):
+    pass

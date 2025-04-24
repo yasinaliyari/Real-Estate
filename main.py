@@ -2,6 +2,7 @@ from user import User
 from random import choice
 from region import Region
 from estate import Apartment, House, Store
+from advertisment import ApartmentSell
 
 First_Name = ['yasin', 'Ali', 'Mehdi']
 Last_Name = ['Aliyari', 'Miri', 'Ajam']
@@ -57,3 +58,19 @@ if __name__ == "__main__":
     )
 
     str1.show_description()
+
+
+    aptsl1 = ApartmentSell(
+        has_elevator=True,
+        has_parking=True,
+        floor=1,
+        user=User.objects_list[3],
+        built_year=1395,
+        region=reg2,
+        area=400,
+        rooms_count=4,
+        convertable=False,
+        address='isfahan',
+        price_per_meter=500,
+        discountable=True
+    )

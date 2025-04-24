@@ -3,7 +3,9 @@ from deal import Sell, Rent
 
 
 class ApartmentSell(Apartment, Sell):
-    pass
+    def show_detail(self):
+        self.show_description()
+        self.show_price()
 
 
 class ApartmentRent(Apartment, Rent):

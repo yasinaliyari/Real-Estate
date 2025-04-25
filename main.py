@@ -2,7 +2,7 @@ from user import User
 from random import choice
 from region import Region
 from estate import Apartment, House, Store
-from advertisment import ApartmentSell
+from advertisment import ApartmentSell, HouseSell
 
 First_Name = ['yasin', 'Ali', 'Mehdi']
 Last_Name = ['Aliyari', 'Miri', 'Ajam']
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         address='shahrood'
     )
     
-    apt1.show_description()
+    # apt1.show_description()
 
 
     hou1 = House(
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         address='shahrood'
     )
 
-    hou1.show_description()
+    # hou1.show_description()
 
 
     str1 = Store(
@@ -57,7 +57,7 @@ if __name__ == "__main__":
         address='tehran'
     )
 
-    str1.show_description()
+    # str1.show_description()
 
 
     aptsl1 = ApartmentSell(
@@ -74,3 +74,24 @@ if __name__ == "__main__":
         price_per_meter=500,
         discountable=True
     )
+
+
+    aptsl1.show_detail()
+
+
+
+    housl1 = HouseSell(
+        has_yard=True,
+        floors_count=1,
+        user=User.objects_list[0],
+        area=500,
+        rooms_count=5,
+        built_year=1402,
+        region=reg2,
+        address='tehran',
+        price_per_meter=100,
+        discountable=False,
+        convertable=False
+    )
+
+    housl1.show_detail()

@@ -125,3 +125,9 @@ if __name__ == "__main__":
         initial_price=500,
         monthly_price=20
     )
+
+
+    print(ApartmentSell.manager)
+    print(ApartmentRent.manager)
+    print(HouseSell.manager)
+    print(HouseRent.manager)

@@ -135,3 +135,5 @@ if __name__ == "__main__":
 
     search_result = HouseRent.manager.search(region=reg1)
     print('fd',search_result)
+
+    print(ApartmentSell.manager.get(region=reg2))

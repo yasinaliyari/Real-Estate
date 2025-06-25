@@ -8,7 +8,7 @@ class Manager:
     def search(self, **kwargs):
         results = list()
         for key, value in kwargs.items():
-            for obj in self._class.object_list:
+            for obj in self._class.objects_list:
                 if hasattr(obj, key) and getattr(obj, key) == value:
                     results.append(obj)
         return results

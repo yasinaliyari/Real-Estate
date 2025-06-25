@@ -2,7 +2,7 @@ from user import User
 from random import choice
 from region import Region
 from estate import Apartment, House, Store
-from advertisment import ApartmentSell, HouseSell
+from advertisment import ApartmentSell, HouseSell, ApartmentRent, HouseRent
 
 First_Name = ['yasin', 'Ali', 'Mehdi']
 Last_Name = ['Aliyari', 'Miri', 'Ajam']
@@ -18,6 +18,7 @@ if __name__ == "__main__":
 
     reg1 = Region(name='R-one')
     reg2 = Region(name='R-two')
+    reg3 = Region(name='R-three')
 
     apt1 = Apartment(
         has_elevator=False,
@@ -64,7 +65,7 @@ if __name__ == "__main__":
         has_elevator=True,
         has_parking=True,
         floor=1,
-        user=User.objects_list[3],
+        user=User.objects_list[1],
         built_year=1395,
         region=reg2,
         area=400,
@@ -95,3 +96,32 @@ if __name__ == "__main__":
     )
 
     housl1.show_detail()
+
+
+    aptrt1 = ApartmentRent(
+        has_elevator=True,
+        has_parking=False,
+        floor=5,
+        user=User.objects_list[0],
+        area=150,
+        rooms_count=3,
+        built_year=1404,
+        region=reg3,
+        address='shahrood',
+        initial_price=120,
+        monthly_price=5
+        )
+    
+
+    housrt1 = HouseRent(
+        has_yard=True,
+        floors_count=1,
+        user=User.objects_list[2],
+        area=300,
+        rooms_count=4,
+        built_year=1400,
+        region=reg1,
+        address='tehran',
+        initial_price=500,
+        monthly_price=20
+    )

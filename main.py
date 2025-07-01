@@ -133,7 +133,9 @@ if __name__ == "__main__":
     print(HouseRent.manager)
 
 
-    search_result = HouseRent.manager.search(region=reg1)
-    print('fd',search_result)
-
+    print(HouseRent.manager.search(region=reg1))
+    print(HouseSell.manager.get(rooms_count=5))
+    print(ApartmentRent.manager.search(rooms_count=3))
     print(ApartmentSell.manager.get(region=reg2))
+    
+    print('Result(Price):', HouseSell.manager.search(price_per_meter__min = 200))

@@ -8,8 +8,18 @@ class Handler:
         4: StoreSell, 5: StoreRent
     }
 
+
+    SWITCHES = {
+        'r': 'get_report',
+        's': 'show_all'
+    }
+
     def run(self):
         print('hello world')
+
+        for key in self.SWITCHES.values:
+            print(f'press {key} for {self.SWITCHES[key]}')
+        choice= input('Enter your choice')
 
 if __name__ == "__main__":
     create_sample()

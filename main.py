@@ -4,8 +4,8 @@ from advertisment import ApartmentSell, HouseSell, ApartmentRent, HouseRent, Sto
 class Handler:
     ADVERTISMENT_TYPE = {
         1: ApartmentSell, 2: ApartmentRent,
-        2: HouseSell, 3: HouseRent,
-        4: StoreSell, 5: StoreRent
+        3: HouseSell, 4: HouseRent
+        # 5: StoreSell, 6: StoreRent
     }
 
 
@@ -14,15 +14,31 @@ class Handler:
         's': 'show_all'
     }
 
+    def get_report(self):
+        for adv in self.ADVERTISMENT_TYPE.values():
+            print(adv, adv.manager.count())
+
+    def show_all(self):
+        for adv in self.ADVERTISMENT_TYPE.values():
+            # print(adv, adv.manager.count())
+            for obj in adv.objects_list:
+                print(obj.show_detail())
+
+
     def run(self):
         print('hello world')
 
-        for key in self.SWITCHES.values:
+        for key in self.SWITCHES:
             print(f'press {key} for {self.SWITCHES[key]}')
-        choice= input('Enter your choice')
+        user_input = input('Enter your choice: ')
+        switch = self.SWITCHES.get(user_input, None)
+        if switch is None:
+            print('Invalid input')
+            self.run()
+        choice = getattr(self, switch, None)
+        choice()
+        self.run()
 
 if __name__ == "__main__":
     create_sample()
-    handler = Handler()
-    
-    handler.run()
+    handler = Handler().run()

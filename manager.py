@@ -40,3 +40,7 @@ class Manager:
             for obj in self._class.objects_list:
                 if hasattr(obj, key) and getattr(obj, key) == value:
                     return obj
+                
+
+    def count(self):
+        return len(self._class.objects_list)
